@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCHtmlHelpers.Examples", "MVCHtmlHelpers\MVCHtmlHelpers.Examples.csproj", "{5F71773E-2FA8-4DE4-8461-C537C8E75A04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Di.HtmlHelpers", "Di.HtmlHelpers\Di.HtmlHelpers.csproj", "{C59A053C-B800-4203-9544-79836569D409}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F71773E-2FA8-4DE4-8461-C537C8E75A04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F71773E-2FA8-4DE4-8461-C537C8E75A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F71773E-2FA8-4DE4-8461-C537C8E75A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F71773E-2FA8-4DE4-8461-C537C8E75A04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C59A053C-B800-4203-9544-79836569D409}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C59A053C-B800-4203-9544-79836569D409}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C59A053C-B800-4203-9544-79836569D409}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C59A053C-B800-4203-9544-79836569D409}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE570EB8-EE3A-4309-981E-4E8D9CD95F14}
+	EndGlobalSection
+EndGlobal

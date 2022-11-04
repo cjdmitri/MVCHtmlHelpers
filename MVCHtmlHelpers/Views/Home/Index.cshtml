@@ -1,0 +1,31 @@
+﻿@{
+     ViewData["Title"] = "Home Page";
+
+     List<ModelUser> users = new List<ModelUser>();
+     for (int i = 1; i <= 50; i++)
+     {
+          users.Add(new ModelUser
+                    {
+                         DateRegistered = DateTime.Now,
+                         Email = "muser@mail.ru",
+                         Id = i,
+                         ItsBlocked = false,
+                         Name = $"User {i}",
+                         Password = "password",
+                         Role = $"role{i}"
+                    });
+     }
+
+     Dictionary<string, string> replaceItems = new Dictionary<string, string>();
+     replaceItems.Add("False", "<span class=\"badge bg-warning\">false</span>");
+     replaceItems.Add("True", "<span class=\"badge bg-success\">true</span>");
+
+     string[] exFields = { "TemporaryPassword", "EmailConfirmedKey" };
+}
+
+<div class="text-center">
+     <h1 class="display-4">Welcome</h1>
+     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@Html.CreateTable(users, "table table-striped table-bordered", replaceStrings: replaceItems, excludeFields: exFields)
