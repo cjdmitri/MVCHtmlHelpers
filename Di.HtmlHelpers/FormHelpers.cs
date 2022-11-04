@@ -19,7 +19,10 @@ namespace Di.HtmlHelpers
                string action,
                string? classInput = null,
                string? classGroup = null,
-               string[]? excludeFields = null)
+               string? classButton = null,
+               string textButton = "Отправить",
+               string[]? excludeFields = null,
+               string[]? hiddenFields = null)
           {
                string result = $"<form method=\"{method}\" action=\"{action}\">";
                //Получаем все свойства модели
@@ -35,6 +38,15 @@ namespace Di.HtmlHelpers
 
                foreach (var pInfo in propertyInfos)
                {
+                    if(hiddenFields != null)
+                    {
+                         string? index = hiddenFields.FirstOrDefault(x => x == pInfo.Name);
+                         if(index != null)
+                         {
+                              result += $"<input type=\"hidden\"  id=\"{pInfo.Name}\" name=\"{pInfo.Name}\" value=\"{pInfo.GetValue(model)}\" hidden>";
+                              continue;
+                         }
+                    }
                     result += $"<div {clsGroup}>";
                     string required = "";
                     if (pInfo.IsRequired())
@@ -59,8 +71,10 @@ namespace Di.HtmlHelpers
                     result += $"</div>";
                }
 
-
-               result += "Hello in form!";
+               string clsBtn = "";
+               if (classButton != null)
+                    clsBtn = $"class=\"{classButton}\"";
+               result += $"<button type=\"submit\" {clsBtn}>{textButton}</button>";
 
                result += "</form>";
                return new HtmlString(result);

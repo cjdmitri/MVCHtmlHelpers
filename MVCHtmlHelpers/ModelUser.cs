@@ -13,7 +13,6 @@ namespace Di.HtmlHelpers
      {
 
           [Display(Name = "Id")]
-         // [HiddenInput]
           [HtmlInput(TypeInput.number)]
           public int Id { get; set; }
           [MaxLength(100)]
