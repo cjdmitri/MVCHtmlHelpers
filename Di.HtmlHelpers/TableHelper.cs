@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 using System.Net.NetworkInformation;
 using System.Reflection;
+using Di.HtmlHelpers.Extensions;
 
 namespace Di.HtmlHelpers
 {
@@ -32,7 +33,6 @@ namespace Di.HtmlHelpers
              string[]? excludeFields = null)
           {
                //Получаем все свойства модели
-               Type type = typeof(T);
                PropertyInfo[] propertyInfos = Common.GetProperties<T>(excludeFields);
 
                //Устанавливаем класс для таблицы
@@ -48,7 +48,7 @@ namespace Di.HtmlHelpers
                {
                     result += "<thead><tr>";
                     foreach (var propertyInfo in propertyInfos)
-                         result += $@"<th>{Common.GetPropertyName(propertyInfo)}</th>";
+                         result += $@"<th>{propertyInfo.GetDisplayName()}</th>";
                     result += "</tr>";
 
                     //Если необходимо показать строку поиска

@@ -8,6 +8,7 @@ namespace Di.HtmlHelpers
 {
      public enum TypeInput
      {
+          text,
           button,
           checkbox,
           color,
@@ -24,7 +25,6 @@ namespace Di.HtmlHelpers
           reset,
           search,
           tel,
-          text,
           time,
           url,
           week

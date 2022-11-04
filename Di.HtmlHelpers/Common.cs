@@ -35,33 +35,5 @@ namespace Di.HtmlHelpers
 
                return propertyInfos;
           }
-
-          /// <summary>
-          /// Проверяем атрибуты свойства модели для определения имени.
-          /// Если атрибутов нет, то возвращаем название свойства
-          /// </summary>
-          /// <param name="pinfo"></param>
-          /// <returns></returns>
-          internal static string GetPropertyName(PropertyInfo pInfo)
-          {
-               string result = pInfo.Name;
-
-               object[] attributes = pInfo.GetCustomAttributes(true);
-               foreach (object atr in attributes)
-               {
-                    DisplayNameAttribute? displayNameAttribute = atr as DisplayNameAttribute;
-                    if (displayNameAttribute != null)
-                         result = displayNameAttribute.DisplayName;
-                    else
-                    {
-                         DisplayAttribute? displayAttribute = atr as DisplayAttribute;
-                         if (displayAttribute != null)
-                              if (displayAttribute.Name != null)
-                                   result = displayAttribute.Name;
-                    }
-               }
-               return result;
-          }
-
      }
 }

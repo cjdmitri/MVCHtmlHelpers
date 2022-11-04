@@ -12,9 +12,9 @@ namespace Di.HtmlHelpers
      public class ModelUser
      {
 
-          [DisplayName("Id")]
-          [HiddenInput]
-          [HtmlInput(TypeInput.hidden, IsHidden = true)]
+          [Display(Name = "Id")]
+         // [HiddenInput]
+          [HtmlInput(TypeInput.number)]
           public int Id { get; set; }
           [MaxLength(100)]
           [Required]
@@ -61,6 +61,7 @@ namespace Di.HtmlHelpers
           /// Является ли пользователь заблокированным на сайте
           /// </summary>
           [DisplayName("Пользователь заблокирован")]
+          [HtmlInput(TypeInput.checkbox)]
           public bool ItsBlocked { get; set; }
 
           private string PrivateProperty { get; set; }

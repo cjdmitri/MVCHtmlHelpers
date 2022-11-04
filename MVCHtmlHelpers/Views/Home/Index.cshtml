@@ -21,11 +21,22 @@
      replaceItems.Add("True", "<span class=\"badge bg-success\">true</span>");
 
      string[] exFields = { "TemporaryPassword", "EmailConfirmedKey" };
+
+     ModelUser user = new ModelUser
+               {
+                    DateRegistered = DateTime.Now,
+                    Email = "muser@mail.ru",
+                    Id = 52,
+                    ItsBlocked = true,
+                    Name = "User 1",
+                    Password = "password",
+                    Role = "role1"
+               };
 }
 
 <div class="text-center">
      <h1 class="display-4">Welcome</h1>
      <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-
+@Html.CreateForm(user, "POST", "/Home/Index", classGroup:"mb-3", classInput:"form-control")
 @Html.CreateTable(users, "table table-striped table-bordered", replaceStrings: replaceItems, excludeFields: exFields)
