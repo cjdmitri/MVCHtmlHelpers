@@ -2,7 +2,7 @@
      ViewData["Title"] = "Home Page";
 
      List<ModelUser> users = new List<ModelUser>();
-     for (int i = 1; i <= 50; i++)
+     for (int i = 1; i <= 500; i++)
      {
           users.Add(new ModelUser
                     {
@@ -19,6 +19,10 @@
      Dictionary<string, string> replaceItems = new Dictionary<string, string>();
      replaceItems.Add("False", "<span class=\"badge bg-warning\">false</span>");
      replaceItems.Add("True", "<span class=\"badge bg-success\">true</span>");
+
+     Dictionary<string, string> actions = new Dictionary<string, string>();
+     actions.Add("/home/edite/*Id*", "Редактировать");
+     actions.Add("/home/remove/*Name*", "Удалить");
 
      string[] exFields = { "TemporaryPassword", "EmailConfirmedKey" };
 
@@ -39,5 +43,5 @@
      <h1 class="display-4">Welcome</h1>
      <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-@Html.CreateForm(user, "POST", "/Home/Index", classGroup:"mb-3", classInput:"form-control", hiddenFields: hFields)
-@Html.CreateTable(users, "table table-striped table-bordered", replaceStrings: replaceItems, excludeFields: exFields)
+@*@Html.CreateForm(user, "POST", "/Home/Index", classGroup:"mb-3", classInput:"form-control", hiddenFields: hFields, classButton: "btn btn-success mb-3")*@
+@Html.CreateTable(users, "table table-striped table-bordered", replaceStrings: replaceItems, excludeFields: exFields, actions:actions)
