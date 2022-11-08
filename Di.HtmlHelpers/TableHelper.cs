@@ -40,7 +40,7 @@ namespace Di.HtmlHelpers
              string[]? excludeFields = null,
              Dictionary<string, string>? actions = null)
           {
-               sw.Start();
+               sw.Restart();
                //Получаем все свойства модели
                propertyInfos = Common.GetProperties<T>(excludeFields);
 
